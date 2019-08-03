@@ -1,7 +1,11 @@
 import React  from 'react'
 import { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator } from 'react-navigation';
 import HomePage from './page/home';
+import ProfilePage from './page/profile';
 import SplashScreen from './SplashScreen';
+import Login from './login';
+import Registers from './register';
+import ForgotPassword from './forgotPassword';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const TabApp = createBottomTabNavigator({
@@ -15,7 +19,7 @@ const TabApp = createBottomTabNavigator({
         }
     },
     Profile: {
-        screen: HomePage,
+        screen: ProfilePage,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: ({ tintColor }) => (
@@ -23,21 +27,21 @@ const TabApp = createBottomTabNavigator({
             )
         }
     },
-    About: {
+    Component: {
         screen: HomePage,
         navigationOptions: {
-            tabBarLabel: 'About',
+            tabBarLabel: 'Component',
             tabBarIcon: ({ tintColor }) => (
-                <Icon name="md-chatbubbles" style={{fontSize:30}} color={tintColor} />
+                <Icon name="md-albums" style={{fontSize:30}} color={tintColor} />
             )
         }
     },
-    ContactUs: {
+    Page: {
         screen: HomePage,
         navigationOptions: {
-            tabBarLabel: 'Contact Us',
+            tabBarLabel: 'Page',
             tabBarIcon: ({ tintColor }) => (
-                <Icon name="md-contacts" style={{fontSize:30}} color={tintColor} />
+                <Icon name="md-browsers" style={{fontSize:30}} color={tintColor} />
             )
         }
     },
@@ -73,5 +77,8 @@ const Navigasi = createStackNavigator({
 const SpScreen = createSwitchNavigator({
     AuthLoading: SplashScreen,
     App: Navigasi,
+    LoginPage: Login,
+    RegisterPage:Registers,
+    ForgotPasswordPage:ForgotPassword
 });
 export default createAppContainer(SpScreen);

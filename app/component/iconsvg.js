@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { View } from 'react-native';
 import Down from '../image/icon/arrowdown.svg'
 
 class iconsvg extends React.Component {
@@ -15,7 +15,7 @@ class iconsvg extends React.Component {
             size = 15;
         }
         let icons = {
-            down: <Down width={size} height={size} style={{ color: '#f80' }}/>
+            down: <Down width={size} height={size}/>
         }
     return (
       <View>

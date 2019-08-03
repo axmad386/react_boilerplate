@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text,
-    StyleSheet,
-    ActivityIndicator,
-    Image,
-    AsyncStorage,
-    ImageBackground
-} from 'react-native';
+import { View,Image } from 'react-native';
 import bgImage from './image/background/background.jpg'
 
 class SplashScreen extends Component {
 
     _bootstrapAsync = async () => {
-        this.props.navigation.navigate('App')
+        this.props.navigation.navigate('LoginPage')
     };
 
     // Fetch the token from storage then navigate to our appropriate place
